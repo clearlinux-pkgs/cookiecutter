@@ -4,7 +4,7 @@
 #
 Name     : cookiecutter
 Version  : 1.7.3
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/58/f5/6f41fa38e6efe4a0e85771f99a4ad8c33b4c14f03b4cc53b459aac4a629a/cookiecutter-1.7.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/58/f5/6f41fa38e6efe4a0e85771f99a4ad8c33b4c14f03b4cc53b459aac4a629a/cookiecutter-1.7.3.tar.gz
 Summary  : A command-line utility that creates projects from project templates, e.g. creating a Python package project from a Python package project template.
@@ -15,13 +15,19 @@ Requires: cookiecutter-license = %{version}-%{release}
 Requires: cookiecutter-python = %{version}-%{release}
 Requires: cookiecutter-python3 = %{version}-%{release}
 Requires: Jinja2
+Requires: binaryornot
 Requires: click
+Requires: jinja2-time
+Requires: poyo
 Requires: python-slugify
 Requires: requests
 Requires: six
 BuildRequires : Jinja2
+BuildRequires : binaryornot
 BuildRequires : buildreq-distutils3
 BuildRequires : click
+BuildRequires : jinja2-time
+BuildRequires : poyo
 BuildRequires : python-slugify
 BuildRequires : requests
 BuildRequires : six
@@ -89,15 +95,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1623345273
+export SOURCE_DATE_EPOCH=1635715012
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
